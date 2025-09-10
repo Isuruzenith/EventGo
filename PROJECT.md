@@ -125,4 +125,88 @@ EventHub is a web application built with **Next.js** and **TypeScript** to manag
 
 ---
 
-*Generated on August 30, 2025.*
+# University Event Management System
+
+## 1. Project Overview / Abstract
+This project aims to develop a comprehensive **web-based system** for managing university events through a streamlined, multi-tier approval process and secure student registration.  
+
+- Event organizers can propose events, which are approved through a structured flow (**Dean → DVC → VC**).  
+- Students can register for approved events, make payments for paid events, and mark attendance via **QR code scanning**.  
+- The system also provides **analytics dashboards** for university administrators to gain insights into participation, revenue, and event trends.  
+
+---
+
+## 2. Objectives
+- Simplify and digitize the university event proposal and approval process.  
+- Enable online student registration with secure payment options.  
+- Track attendance efficiently using QR codes.  
+- Provide real-time analytics and dashboards for stakeholders.  
+
+---
+
+## 3. Proposed Technologies and Tools
+
+**Frontend:**  
+- Next.js  
+- Tailwind CSS  
+
+**Backend:**  
+- Node.js with Next.js API Routes (Server-side)  
+- RESTful API architecture  
+
+**Database & Authentication:**  
+- MongoDB  
+- NextAuth.js  
+
+**Tools/Platforms:**  
+- Code Editor: Visual Studio Code  
+- Version Control: Git & GitHub  
+- Hosting: Vercel, VPS  
+- Payment Gateway: PayPal  
+- QR Code: `qrcode` npm package  
+- Email Notifications: Nodemailer / SendGrid  
+- API Testing: Postman  
+
+---
+
+## 4. Functional Requirements
+- Multi-level event proposal and approval (**Organizer → Admin → Dean → DVC → VC**).  
+- Student event registration and approval by organizers.  
+- Payment gateway integration for paid events.  
+- QR code-based attendance tracking.  
+- Notifications via email.  
+- Analytics dashboards and report generation.  
+
+---
+
+## 5. Non-Functional Requirements
+- Secure and encrypted communication (**HTTPS, hashed passwords**).  
+- Mobile-responsive UI.  
+- High availability and performance under load.  
+- Role-based access control (RBAC).  
+- Data validation and sanitization.  
+
+---
+
+## 6. Target Users / Stakeholders
+- **Students**: Register and attend events.  
+- **Organizers**: Propose and manage events, approve registrations.  
+- **Dean, DVC, VC**: Approve events at each level.  
+- **Admin**: Manage system configuration and users.  
+- **University Management**: View analytics, reports, and access dashboards to review and approve proposals.  
+
+---
+
+## 7. Project Scope (Inclusions & Exclusions)
+
+**Inclusions:**  
+- Event proposal and approval workflow  
+- Student registration and payment  
+- Dashboards and reporting  
+- Email notifications  
+- QR code-based attendance  
+
+**Exclusions (Future Consideration):**  
+- Mobile application  
+- External calendar syncing (e.g., Google Calendar integration)  
+- Multi-language support  

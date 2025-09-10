@@ -31,6 +31,7 @@ Before you begin, ensure you have the following installed:
 
     ```bash
     npm install
+    npm install lucide-react
     ```
 
 ### Running the Development Server
