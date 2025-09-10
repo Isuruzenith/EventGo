@@ -26,12 +26,25 @@ Before you begin, ensure you have the following installed:
     ```bash
     cd EventHub
     ```
+    **add file name (.env.local) in root folder copy and pase this txt**
+    ```
+    # .env.local
+    MONGODB_URI=mongodb://localhost:27017/event_db
+    
+    ```
+
+        
+     
 
 3.  **Install dependencies:**
 
     ```bash
     npm install
+    ```
+    ```bash
     npm install lucide-react
+    ```
+    ```bash
     npm install bcrypt
     ```
 
