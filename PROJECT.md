@@ -16,9 +16,9 @@ app/
   layout.tsx
   page.tsx
   (login)/
-    newuser/
+    login/
       page.tsx
-    signup/
+    register/
       page.tsx
   api/
     auth/
@@ -43,10 +43,19 @@ app/
     QRCodeScanner.tsx
     DashboardChart.tsx
     NotificationBanner.tsx
+    page.tsx
   home/
     page.tsx
   dashboard/
     page.tsx
+    admin/
+      page.tsx
+    management/
+      page.tsx
+    organizer/
+      page.tsx
+    student/
+      page.tsx
   models/
     User/
       User.ts
@@ -79,8 +88,8 @@ EventHub is a web application built with **Next.js** and **TypeScript** to manag
   - **globals.css**: Global styles using Tailwind CSS for consistent UI.
   - **layout.tsx**: Root layout for the application, defining the overall structure (e.g., navigation, footer).
   - **page.tsx**: Home page for the application (landing page).
-  - **(login)/newuser/page.tsx**: Page for new user registration form.
-  - **(login)/signup/page.tsx**: Page for user login form.
+  - **(login)/login/page.tsx**: Page for user login form.
+  - **(login)/register/page.tsx**: Page for new user registration form.
   - **api/**: API routes for backend logic.
     - **auth/login/route.ts**: Handles user login (POST) using NextAuth.js.
     - **auth/signup/route.ts**: Handles user registration (POST) and stores user data in MongoDB.
@@ -95,8 +104,13 @@ EventHub is a web application built with **Next.js** and **TypeScript** to manag
     - **QRCodeScanner.tsx**: Component for scanning QR codes to mark attendance.
     - **DashboardChart.tsx**: Component for rendering analytics charts (e.g., participation, revenue).
     - **NotificationBanner.tsx**: Displays in-app notifications for users.
+    - **page.tsx**: Additional component page.
   - **home/page.tsx**: Main landing page for logged-in users.
   - **dashboard/page.tsx**: Analytics dashboard for admins and university management.
+  - **dashboard/admin/page.tsx**: Admin dashboard page.
+  - **dashboard/management/page.tsx**: Management dashboard page.
+  - **dashboard/organizer/page.tsx**: Organizer dashboard page.
+  - **dashboard/student/page.tsx**: Student dashboard page.
 
 - **lib/**: Shared utilities and configurations.
   - **db.ts**: MongoDB connection setup and configuration.
