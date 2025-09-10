@@ -32,6 +32,7 @@ Before you begin, ensure you have the following installed:
     ```bash
     npm install
     npm install lucide-react
+    npm install bcrypt
     ```
 
 ### Running the Development Server
