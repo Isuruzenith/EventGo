@@ -66,43 +66,6 @@ const NsbmLogo = ({ color = '#2D3748' }: { color?: string }) => (
 
 // --- UI COMPONENTS ---
 
-const Header = () => {
-  const navLinks = ["Home", "Events", "Dashboard", "Contact"];
-  return (
-    <header className="sticky top-0 z-50">
-      <nav className="container mx-auto px-6 py-3 bg-white/80 backdrop-blur-lg border-b border-gray-200/80 rounded-b-2xl">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <NsbmLogo color="#2D3748" />
-            <span className="text-xl font-bold text-[#2D3748]">EventHub</span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a key={link} href="#" className="text-[#718096] hover:text-[#0D9488] transition-colors duration-300">
-                {link}
-              </a>
-            ))}
-          </div>
-          <div className="hidden md:flex items-center space-x-4">
-            <button className="px-5 py-2.5 rounded-lg text-[#2D3748] font-medium border border-gray-300 transition-colors duration-300 hover:bg-gray-100">
-              Login
-            </button>
-            <button className="px-5 py-2.5 rounded-lg text-white font-semibold bg-[#0D9488] hover:bg-[#0F766E] transition-all duration-300 transform hover:scale-105">
-              Sign Up
-            </button>
-          </div>
-          <div className="md:hidden">
-            <button className="text-[#2D3748]">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
-  );
-};
 
 const HeroSection = () => {
   return (
@@ -209,55 +172,13 @@ const HowItWorksSection = () => {
   );
 };
 
-const Footer = () => {
-  const socialLinks = [ { icon: Facebook, href: "#" }, { icon: Twitter, href: "#" }, { icon: Linkedin, href: "#" } ];
-  const footerLinks = ["About NSBM", "Privacy Policy", "Terms of Service"];
-
-  return (
-    <footer className="bg-[#1A202C] border-t border-gray-700 pt-10 pb-6">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-          <div className="mb-6 md:mb-0">
-            <div className="flex items-center justify-center md:justify-start space-x-4 mb-2">
-              <NsbmLogo color="#FFFFFF" />
-              <span className="text-2xl font-bold text-white">NSBM EventHub</span>
-            </div>
-            <p className="text-gray-400">The official event portal for NSBM Green University.</p>
-          </div>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex space-x-6">
-              {footerLinks.map(link => (
-                <a key={link} href="#" className="text-gray-400 hover:text-[#0D9488] transition-colors duration-300">
-                  {link}
-                </a>
-              ))}
-            </div>
-            <div className="flex space-x-6">
-              {socialLinks.map((social, index) => (
-                <a key={index} href={social.href} className="text-gray-400 hover:text-[#0D9488] transition-colors duration-300">
-                  <social.icon className="w-6 h-6" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 pt-6 border-t border-gray-700 text-center text-gray-500 text-sm">
-          <p>© 2025 NSBM Green University. All Rights Reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
 // --- MAIN PAGE COMPONENT ---
 const HomePage: NextPage = () => {
   return (
     <main className="bg-[#F5F5F5] text-[#2D3748] antialiased">
-      <Header />
       <HeroSection />
       <FeaturedEventsSection />
       <HowItWorksSection />
-      <Footer />
     </main>
   );
 };
