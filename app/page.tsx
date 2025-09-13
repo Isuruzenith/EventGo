@@ -70,19 +70,23 @@ const NsbmLogo = ({ color = '#2D3748' }: { color?: string }) => (
 const HeroSection = () => {
   return (
     <section className="relative h-[85vh] flex items-center justify-center text-center">
-      <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop')"}}></div>
+      <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&h=900&fit=crop')"}}></div>
       <div className="absolute inset-0 bg-[#1A202C]/70"></div>
       <div className="relative z-10 px-4 animate-fade-in-up">
         <h1 className="text-5xl font-extrabold text-white mb-4">
-          Welcome to <span className="text-white">NSBM EventHub</span>
+          Welcome to <span className="text-white">EventGo</span>
         </h1>
         <p className="text-lg max-w-3xl mx-auto text-gray-300 mb-8">
-          Your central portal for all university events. Discover, register, and engage with the vibrant campus life at NSBM.
+          The central platform for proposing, managing, and attending all university events. From workshops to seminars, your campus experience starts here.
         </p>
-        <button className="group inline-flex items-center justify-center px-6 py-3 rounded-lg text-white font-semibold bg-[#0D9488] hover:bg-[#0F766E] transition-all duration-300 transform hover:scale-105">
-          Explore Events
-          <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-        </button>
+        <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <button className="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+              Explore Events
+            </button>
+            <button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+              Become an Organizer
+            </button>
+          </div>
       </div>
     </section>
   );
@@ -115,7 +119,7 @@ const EventCard = ({ event }: { event: Event }) => {
           <span>{event.location}</span>
         </div>
         <p className="text-[#718096] text-sm mb-5 line-clamp-2">{event.description}</p>
-        <button className="w-full flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-semibold bg-[#0D9488] hover:bg-[#0F766E] transition-all duration-300 transform hover:scale-105">
+        <button className="w-full flex items-center justify-center px-5 py-2.5 rounded-lg text-white font-semibold bg-green-700 hover:bg-green-800 transition-all duration-300 transform hover:scale-105">
           <Ticket className="w-4 h-4 mr-2" />
           Register Now
         </button>
@@ -172,6 +176,33 @@ const HowItWorksSection = () => {
   );
 };
 
+  const CommunityNum = () => {
+    const stats = [
+    { number: "150+", label: "Events Hosted" },
+    { number: "10,000+", label: "Student Registrations" },
+    { number: "50+", label: "Active Organizers" },
+    { number: "100%", label: "Digitized Approval" }
+  ];
+  return(
+        <section className="py-20 bg-green-700 text-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Our Community in Numbers
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center p-6 bg-white/20 backdrop-blur-sm rounded-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <p className="text-5xl font-extrabold">{stat.number}</p>
+                <p className="text-lg font-medium text-green-100 mt-2">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+  );
+};
+
+
 // --- MAIN PAGE COMPONENT ---
 const HomePage: NextPage = () => {
   return (
@@ -179,6 +210,7 @@ const HomePage: NextPage = () => {
       <HeroSection />
       <FeaturedEventsSection />
       <HowItWorksSection />
+      <CommunityNum />
     </main>
   );
 };

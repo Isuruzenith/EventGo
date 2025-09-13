@@ -39,17 +39,17 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-[#0A101A] p-4">
+    <main className="min-h-screen flex items-center justify-center bg-[#F5F5F5] p-4">
       <div className="w-full max-w-md">
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl p-8">
-          <h2 className="text-2xl font-bold text-center text-[#E5E7EB] mb-6">
+        <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-center text-[#2D3748] mb-8">
             Create an Account
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Input */}
             <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 id="name"
                 type="text"
@@ -57,13 +57,13 @@ export default function RegisterPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-2 text-white bg-gray-900/50 border border-gray-700 rounded-md focus:ring-2 focus:ring-[#6dbb45] focus:border-[#6dbb45] outline-none transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none transition-all duration-300 placeholder-gray-500"
               />
             </div>
 
             {/* Email Input */}
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 id="email"
                 type="email"
@@ -71,13 +71,13 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-2 text-white bg-gray-900/50 border border-gray-700 rounded-md focus:ring-2 focus:ring-[#6dbb45] focus:border-[#6dbb45] outline-none transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none transition-all duration-300 placeholder-gray-500"
               />
             </div>
 
             {/* Password Input */}
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 id="password"
                 type="password"
@@ -85,30 +85,30 @@ export default function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full pl-10 pr-4 py-2 text-white bg-gray-900/50 border border-gray-700 rounded-md focus:ring-2 focus:ring-[#6dbb45] focus:border-[#6dbb45] outline-none transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none transition-all duration-300 placeholder-gray-500"
               />
             </div>
             
             {/* Role Selector */}
             <div className="relative">
-              <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+              <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <select
                 id="role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 text-white bg-gray-900/50 border border-gray-700 rounded-md focus:ring-2 focus:ring-[#6dbb45] focus:border-[#6dbb45] outline-none transition-all duration-300 appearance-none"
+                className="w-full pl-10 pr-4 py-3 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none transition-all duration-300 appearance-none"
               >
                 <option value="Student">Student</option>
                 <option value="Organizer">Event Organizer</option>
               </select>
-              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none" />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full px-4 py-3 rounded-md text-white font-semibold bg-gradient-to-r from-[#005a9e] to-[#6dbb45] hover:from-[#6dbb45] hover:to-[#4b8b24] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[#6dbb45]/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-4 py-3 rounded-lg text-white font-bold bg-green-700 hover:bg-green-800 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? 'Registering...' : 'Register'}
             </button>
@@ -116,22 +116,22 @@ export default function RegisterPage() {
 
           {/* Success Message */}
           {message && (
-            <div className="mt-4 text-center text-sm text-green-300 bg-green-900/50 border border-green-500/50 rounded-md p-3">
+            <div className="mt-4 text-center text-sm text-green-800 bg-green-100 border border-green-300 rounded-lg p-3">
               {message}
             </div>
           )}
 
           {/* Error Message */}
           {error && (
-            <div className="mt-4 text-center text-sm text-red-300 bg-red-900/50 border border-red-500/50 rounded-md p-3">
+            <div className="mt-4 text-center text-sm text-red-700 bg-red-100 border border-red-300 rounded-lg p-3">
               {error}
             </div>
           )}
 
           {/* Login Link */}
-          <p className="mt-6 text-center text-sm text-gray-400">
+          <p className="mt-8 text-center text-sm text-[#718096]">
             Already have an account?{" "}
-            <Link href="/login" className="font-semibold text-[#6dbb45] hover:underline">
+            <Link href="/login" className="font-semibold text-green-700 hover:text-green-800 hover:underline">
               Login here
             </Link>
           </p>

@@ -1,25 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Mail, Lock } from "lucide-react"; // For input icons
-
-// --- MOCK LINK COMPONENT ---
-// In a real Next.js app, you would use `import Link from "next/link";`
-// This is a placeholder to make the component runnable in this environment.
-const Link = ({ href, children, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-  <a href={href} {...props}>{children}</a>
-);
-
-// --- MOCK ROUTER HOOK ---
-// In a real Next.js app, you would use `import { useRouter } from "next/navigation";`
-// This is a placeholder to make the component runnable in this environment.
-const useRouter = () => {
-  return {
-    push: (path: string) => {
-      window.location.href = path;
-    }
-  };
-};
-
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -67,14 +50,11 @@ export default function LoginPage() {
   }
 
   return (
-    // --- THEME CHANGE: Main background to light gray ---
     <main className="min-h-screen flex items-center justify-center bg-[#F5F5F5] p-4">
       <div className="w-full max-w-md">
-        {/* --- THEME CHANGE: Form container to a white card --- */}
         <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-8">
-          {/* --- THEME CHANGE: Heading text to dark gray --- */}
           <h2 className="text-3xl font-bold text-center text-[#2D3748] mb-8">
-            Sign in to EventHub
+            Login to EventGo
           </h2>
           
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -87,8 +67,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                // --- THEME CHANGE: Input fields for light mode ---
-                className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0D9488] focus:border-[#0D9488] outline-none transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none transition-all duration-300 placeholder-gray-500"
               />
             </div>
             
@@ -101,16 +80,14 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                // --- THEME CHANGE: Input fields for light mode ---
-                className="w-full pl-10 pr-4 py-3 text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0D9488] focus:border-[#0D9488] outline-none transition-all duration-300"
+                className="w-full pl-10 pr-4 py-3 text-gray-800 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none transition-all duration-300 placeholder-gray-500"
               />
             </div>
             
             {/* Submit Button */}
             <button
               type="submit"
-              // --- THEME CHANGE: Button to solid teal color ---
-              className="w-full px-4 py-3 rounded-lg text-white font-semibold bg-[#0D9488] hover:bg-[#0F766E] transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-4 py-3 rounded-lg text-white font-bold bg-green-700 hover:bg-green-800 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Login
             </button>
@@ -118,17 +95,15 @@ export default function LoginPage() {
 
           {/* Error Message */}
           {error && (
-            // --- THEME CHANGE: Error message for light mode ---
             <div className="mt-4 text-center text-sm text-red-700 bg-red-100 border border-red-300 rounded-lg p-3">
               {error}
             </div>
           )}
 
           {/* Registration Link */}
-          {/* --- THEME CHANGE: Text and link colors for light mode --- */}
-          <p className="mt-8 text-center text-sm text-gray-600">
+          <p className="mt-8 text-center text-sm text-[#718096]">
             Don't have an account?{" "}
-            <Link href="/register" className="font-semibold text-[#0D9488] hover:underline">
+            <Link href="/register" className="font-semibold text-green-700 hover:text-green-800 hover:underline">
               Register here
             </Link>
           </p>
